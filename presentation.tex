@@ -1,0 +1,124 @@
+\documentclass{beamer}
+%Information to be included in the title page:
+%\begin{frame}
+%\frametitle{}
+%\end{frame}
+%\begin{frame}[fragile]
+  %\begin{lstlisting}
+       %%CODE HERE
+   %\end{lstlisting}
+%\end{frame}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+\title{Object Oriented design }
+\author{Mackenzie Norman}
+
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Why?}
+``Object - oriented approaches localize Information around objects''
+
+        - \textit{Edward V. Berard}\newline
+
+Object Oriented design allows for
+\begin{list}{- }{}
+    \item Greater extensibility
+    
+    \item Less repeated Code
+    \item Easier design process
+\end{list}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Core Concepts of Object Oriented Design}
+There are key three features of Object Oriented design. 
+
+\begin{list}{- }{}
+    \item Encapsulation \& data-hiding
+    \item Inheritance
+    \item Polymorphism 
+\end{list}
+
+\textit{Note: In small software projects encapsulation is often less important than the other 2, so I will most likely ignore it in this presentation, if you are writing large software in R please find a new profession}
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Polymorphism and Inheritance}
+    Polymorphism and Inheritance are what make object oriented programming so powerful. Lets use the example of a car. We can think of some other types of cars:
+\begin{list}{- }{}
+    \item A Sedan
+    \item A Truck
+    \item A hatchback
+\end{list}
+
+We inherently know that these \textit{objects} are all types of cars and will preform the same activity (driving)
+However - these vehicles have very different engines \textit{under the hood}. 
+Object Oriented Code is an attempt to make the future code writer,  the driver. It doesn't matter how the car drives or what the engine does, a driver can drive all three of these cars
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Polymorphism and Inheritance}
+    Continuing the analogy, polymorphism is the idea that road shouldn't handle a sedan differently from a truck. \newline
+
+    In terms of code we can see this like:
+    \begin{lstlisting}[language=R]
+        s <- sedan$new()
+        t <- truck$new()
+
+        #these should do the same thing
+        s$drive()
+        t$drive()
+    \end{lstlisting}
+
+\end{frame}
+\begin{frame}
+    \frametitle{Polymorphism and Inheritance}
+    While polymorphism is fairly abstract and able to be understood without code, Inheritance is the mechanism in which polymorphism is realized. \newline
+    Unfortunately (or fortunately) to understand Inheritance we need to look at code
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Polymorphism and Inheritance}
+    Here is our pet class in code, its very simple, just a name and a favorite food
+ \lstinputlisting[language=R, firstline=2, lastline=12]{cats_in_r6.r}
+\end{frame}
+
+\end{document}
